@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -176,13 +175,16 @@
             .narrator-section { margin-top: -40px; }
             .phases-container { grid-template-columns: 1fr; gap: 0; }
             
+            /* FIXED: sticky behavior maintained on mobile */
             .phase-visuals-sticky { 
-                position: relative; 
-                top: 0; 
+                position: sticky; 
+                top: 20px; /* Kept a bit from the top */
                 height: auto; 
                 margin-bottom: 20px;
                 z-index: 5; 
                 display: block; 
+                background: var(--bg-cream); /* Ensure text doesn't bleed through image behind it */
+                padding-bottom: 10px;
             }
             
             .visual-stack { 
@@ -260,7 +262,7 @@
                 <div class="phase-text-block" data-target="visual-1">
                     <div class="phase-number">01</div>
                     <h2>The Missionary</h2>
-                    <p>I remember when my dust was first stirred by two brothers who walked as one. I felt the fire of <span class="highlight">Narayan Bhat</span> and the unwavering strength of Narasimha Murthy and fellow tyagijivis. They had no money, only a shared dream. I felt their sweat fall upon me as they built the first walls, sharing a single vision to feed and teach the children. They didn't just walk on me; they offered their lives to my soil so that a future could take root.</p>
+                    <p>I remember when my dust was first stirred by two brothers who walked as one. I felt the fire of <span class="highlight">Narayan Bhat</span> and the unwavering strength of Narasimha Murthy and fellow <strong>thiagajeevis</strong>. They had no money, only a shared dream. I felt their sweat fall upon me as they built the first walls, sharing a single vision to feed and teach the children. They didn't just walk on me; they offered their lives to my soil so that a future could take root.</p>
                 </div>
 
                 <div class="phase-text-block" data-target="visual-2">
@@ -272,9 +274,9 @@
                 <div class="phase-text-block" data-target="visual-3">
                     <div class="phase-number">03</div>
                     <h2>The Missionary, The Master, The Man & The Mission</h2>
-                    <p>I witnessed a powerful union on this land. The work was done through the body of Madhusudan Sai, fueled by the devoted soul of Narayana Bhat, and guided by the divine consciousness of Sathya Sai Baba.
+                    <p>I saw the perfect union manifest on this land: the body of <strong>Madhusudan Sai</strong>, the soul of <strong>Narayana Bhat</strong>, and the consciousness of <strong>Sathya Sai Baba</strong>.
 
-These three aspects merged into one path of service. What began humbly transformed into a global mission, building hospitals and schools to heal and educate millions. The stream of love and service continued to flow, unbroken.</p>
+This divine synthesis sparked a great movement. It was no longer the journey of a single individual, but of an army of <strong>missionary men and women</strong>. Inspired by this trinity, they carried the torch forward, building institutions of healing and learning across the globe. The stream of service flowed through thousands of hands, all beating with one heart.</p>
                 </div>
 
                 <div class="phase-text-block" data-target="visual-4">
