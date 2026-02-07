@@ -168,42 +168,60 @@
         @keyframes scaleOut { from { width: 0; opacity: 0; } to { width: 120px; opacity: 1; } }
         @keyframes bounce { 0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 40% {transform: translateY(-10px);} 60% {transform: translateY(-5px);} }
 
-        /* --- MOBILE --- */
+        /* --- MOBILE LAYOUT OPTIMIZED --- */
         @media (max-width: 768px) {
             .medallion-container { width: 30vh; height: 30vh; }
             .anniversary-text { font-size: 2.5rem; }
             .narrator-section { margin-top: -40px; }
-            .phases-container { grid-template-columns: 1fr; gap: 0; }
             
-            /* FIXED: sticky behavior maintained on mobile */
+            /* 1. Stack containers vertically */
+            .phases-container { 
+                display: block; /* Use Block for simple stacking */
+                position: relative;
+            }
+            
+            /* 2. THE CEILING (Sticky Image) */
+            /* Z-Index 100 ensures it is physically "above" the text in layers */
             .phase-visuals-sticky { 
+                position: -webkit-sticky; 
                 position: sticky; 
-                top: 20px; /* Kept a bit from the top */
-                height: auto; 
-                margin-bottom: 20px;
-                z-index: 5; 
-                display: block; 
-                background: var(--bg-cream); /* Ensure text doesn't bleed through image behind it */
-                padding-bottom: 10px;
+                top: 0; 
+                height: 50vh; 
+                width: 100%;
+                z-index: 100;  /* HIGH Z-INDEX = ON TOP */
+                display: flex; 
+                align-items: center; 
+                justify-content: center;
+                background: var(--bg-cream); /* SOLID BACKGROUND to hide text */
+                border-bottom: 2px solid var(--primary-gold);
+                padding: 10px 0;
             }
             
             .visual-stack { 
-                max-width: 100%; 
-                width: 100%; 
-                aspect-ratio: 16/9; 
-                margin: 0 auto;
+                max-width: 250px; 
+                width: 70%;
+                aspect-ratio: 1 / 1.5; 
             }
             
-            .phase-content { position: relative; z-index: 1; background: transparent; padding-top: 20px; }
+            /* 3. THE FLOOR (Scrolling Text) */
+            /* Z-Index 1 means it is "behind" layer 100 */
+            .phase-content { 
+                position: relative; 
+                z-index: 1; /* LOW Z-INDEX = BEHIND */
+                background: transparent; 
+            }
             
             .phase-text-block { 
-                min-height: auto; 
-                padding: 20px; 
-                margin-bottom: 60px; 
+                min-height: 60vh; 
+                padding: 30px 20px; 
+                margin-bottom: 0; 
                 border: none; 
                 border-top: 1px solid rgba(157, 126, 69, 0.3); 
                 text-align: center; 
-                background: rgba(253, 251, 247, 0.9); 
+                background: rgba(253, 251, 247, 0.95); /* Legible text bg */
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
             }
             
             .narrator-card { flex-direction: column; text-align: center; align-items: center; }
